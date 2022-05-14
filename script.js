@@ -2,6 +2,7 @@ const startBtn = document.getElementById("start-game")
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardEl = document.getElementById("cards-el")
+let newCardBtn = document.getElementById('new-card')
 
 let firstCard = 9;
 let secondCard = 4;
@@ -24,4 +25,10 @@ function startGame() {
 	cardEl.textContent = "Cards:" + " " + firstCard + " " + secondCard;
 }
 
+function newCard(){
+  console.log("Drawing new Card");
+}
+
 startBtn.addEventListener("click", startGame)
+newCardBtn.addEventListener("click", newCard)
+
