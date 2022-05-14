@@ -29,9 +29,19 @@ function renderGame() {
 function newCard(){
   let card = 7;
   sum += card;; 
+  cards.push(card)
+  console.log(cards);
   renderGame();
 }
 
 startBtn.addEventListener("click", renderGame)
 newCardBtn.addEventListener("click", newCard)
+
+let names = ['Hello', 'there', 'welcome', 'back']
+let greetingEl = document.getElementById('greeting-el')
+
+for (let i = 0; i < names.length; i++) {
+  greetingEl.textContent += names[i] + ' ';
+}
+
 
