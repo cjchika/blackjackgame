@@ -4,13 +4,17 @@ let sumEl = document.getElementById("sum-el")
 let cardEl = document.getElementById("cards-el")
 let newCardBtn = document.getElementById('new-card')
 
-let firstCard = 9;
-let secondCard = 4;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard;
 let isAlive = true;
 
 let message = "";
+
+function getRandomCard() {
+  return 5;
+}
 
 function renderGame() {
   if (sum <= 20) {
@@ -23,11 +27,16 @@ function renderGame() {
   }   
   messageEl.textContent = message;
 	sumEl += sumEl.textContent = "Sum:" + " " + sum;
-	cardEl.textContent = "Cards:" + " " + cards[0] + " " + cards[1];
+	cardEl.textContent = "Cards:" + " ";
+
+  for (i = 0; i < cards.length; i++) {
+    cardEl.textContent += cards[i] + ' ';
+  }
+
 }
 
 function newCard(){
-  let card = 7;
+  let card = getRandomCard();
   sum += card;; 
   cards.push(card)
   console.log(cards);
