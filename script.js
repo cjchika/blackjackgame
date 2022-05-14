@@ -13,7 +13,7 @@ let isAlive = true;
 let message = "";
 
 function getRandomCard() {
-  return 5;
+  return Math.floor( Math.random() * 13 ) + 1;
 }
 
 function renderGame() {
