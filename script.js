@@ -4,19 +4,39 @@ let sumEl = document.getElementById("sum-el")
 let cardEl = document.getElementById("cards-el")
 let newCardBtn = document.getElementById('new-card')
 
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard;
-let isAlive = true;
+let cards = [];
+let sum = 0;
+let isAlive = false;
+
+console.log(cards);
 
 let message = "";
 
 function getRandomCard() {
-  return Math.floor( Math.random() * 13 ) + 1;
+  let randomNum = Math.floor( Math.random() * 13 ) + 1;
+
+  if (randomNum > 10) {
+    return 10
+  } else if (randomNum === 1) {
+    return 11
+  } else {
+    return randomNum;
+  }
+}
+
+function startGame() {
+  isAlive = true;
+
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  cards = [firstCard, secondCard]
+  sum = firstCard + secondCard;
 }
 
 function renderGame() {
+  
+  startGame()
+
   if (sum <= 20) {
     message = "Do you want to draw a new Card?";
   } else if (sum === 21) {
@@ -39,18 +59,12 @@ function newCard(){
   let card = getRandomCard();
   sum += card;; 
   cards.push(card)
-  console.log(cards);
   renderGame();
 }
 
 startBtn.addEventListener("click", renderGame)
 newCardBtn.addEventListener("click", newCard)
 
-let names = ['Hello', 'there', 'welcome', 'back']
-let greetingEl = document.getElementById('greeting-el')
 
-for (let i = 0; i < names.length; i++) {
-  greetingEl.textContent += names[i] + ' ';
-}
 
 
