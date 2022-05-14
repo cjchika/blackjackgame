@@ -1,9 +1,10 @@
 const startBtn = document.getElementById("start-game")
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
+let cardEl = document.getElementById("cards-el")
 
-let firstCard = 11;
-let secondCard = 3;
+let firstCard = 9;
+let secondCard = 4;
 let sum = firstCard + secondCard;
 let isAlive = true;
 
@@ -20,6 +21,7 @@ function startGame() {
   }   
   messageEl.textContent = message;
 	sumEl += sumEl.textContent = "Sum:" + " " + sum;
+	cardEl.textContent = "Cards:" + " " + firstCard + " " + secondCard;
 }
 
 startBtn.addEventListener("click", startGame)
